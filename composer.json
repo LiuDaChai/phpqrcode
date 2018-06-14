@@ -1,5 +1,5 @@
 {
-    "name": "Lobb/phpqrcode",
+    "name": "lobbl/phpqrcode",
     "description": "生成二维码, thinkphp5",
     "license": "MIT",
     "authors": [
