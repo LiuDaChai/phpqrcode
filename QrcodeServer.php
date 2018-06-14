@@ -7,7 +7,7 @@
  */
 namespace PHPQrcode;
 
-use think\Config;
+// use think\Config;
 
 class QrcodeServer
 {
@@ -23,15 +23,16 @@ class QrcodeServer
         include "lib/qrlib.php";
 
         // 获取配置信息
-        $options = Config::get('qrcode');
+        // $options = Config::get('qrcode');
 
-        // 确认目录是否存在
-        if (!file_exists($options['temp_file_dir'])){
-            mkdir($options['temp_file_dir']);
-        }
+        // // 确认目录是否存在
+        // if (!file_exists($options['temp_file_dir'])){
+        //     mkdir($options['temp_file_dir']);
+        // }
 
         // 创建二维码文件
-        \Qrcode::png($context, $options['temp_file_dir'].$filename, $errorCorrectionLevel, $matrixPointSize);
+        // \Qrcode::png($context, $options['temp_file_dir'].$filename, $errorCorrectionLevel, $matrixPointSize);
+        \Qrcode::png($context, $filename, $errorCorrectionLevel, $matrixPointSize);
 
 
     }
