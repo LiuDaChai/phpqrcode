@@ -7,33 +7,20 @@
  */
 namespace PHPQrcode;
 
-// use think\Config;
+include "lib/qrlib.php";
 
 class QrcodeServer
 {
     /**
-     * 生成二维码
+     * 生成二维码(大小 300 px)
      * @param  String  $context              内容
      * @param  String  $filename             图片文件
      * @param  String  $errorCorrectionLevel 纠错等级(L/M/Q/H)
      * @param  Integer $matrixPointSize      矩阵点大小
      */
-    public static function png($context, $filename, $errorCorrectionLevel='L', $matrixPointSize=4)
+    public static function png($context, $filename, $errorCorrectionLevel='L', $matrixPointSize=8.12)
     {
-        include "lib/qrlib.php";
-
-        // 获取配置信息
-        // $options = Config::get('qrcode');
-
-        // // 确认目录是否存在
-        // if (!file_exists($options['temp_file_dir'])){
-        //     mkdir($options['temp_file_dir']);
-        // }
-
         // 创建二维码文件
-        // \Qrcode::png($context, $options['temp_file_dir'].$filename, $errorCorrectionLevel, $matrixPointSize);
-        \Qrcode::png($context, $filename, $errorCorrectionLevel, $matrixPointSize);
-
-
+        \Qrcode::png($context, $filename, $errorCorrectionLevel, $matrixPointSize, 2);
     }
 }
